@@ -47,7 +47,7 @@ db.run(sql_create, err => {
 
 // Starting the server
 app.listen(3000, () => {
-  console.log("DEV-MODE Server started (http://localhost:3000/) !");
+  console.log("Server started (http://localhost:3000/) !");
 });
 
 // GET /
