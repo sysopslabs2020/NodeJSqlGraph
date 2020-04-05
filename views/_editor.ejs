@@ -1,0 +1,20 @@
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="User">User</label>
+  <div class="col-sm-8">
+    <input autofocus class="form-control" name="User" value="<%= model.User %>" />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Type">Type</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="Type" value="<%= model.Type %>" />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Description">Description</label>
+  <div class="col-sm-10">
+    <textarea class="form-control" cols="20" name="Description" maxlength="32000" rows="7"><%= model.Description %></textarea>
+  </div>
+</div>
