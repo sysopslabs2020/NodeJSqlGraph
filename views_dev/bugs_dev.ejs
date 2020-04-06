@@ -1,6 +1,6 @@
 <%- include("_header") -%>
 
-<h1>Bugs (<%= model.length %>)</h1>
+<h1>Bugs DEV MODE (<%= model.length %>)</h1>
 
 <div class="table-responsive-sm">
   <table class="table table-hover">
@@ -11,7 +11,7 @@
         <th>Description</th>
         <th>Timestamp</th>
         <th class="d-print-none">
-          <a class="btn btn-sm btn-success" href="/create">Submit</a>
+          <a class="btn btn-sm btn-success" href="/create_dev">Submit</a>
         </th>
       </tr>
     </thead>
@@ -23,8 +23,8 @@
           <td><%= bug.Description %></td>
           <td><%= bug.Timestamp %></td>
           <td class="d-print-none">
-            <a class="btn btn-sm btn-warning" href="/edit/<%= bug.Bug_ID %>">Modify</a>
-            <a class="btn btn-sm btn-danger" href="/delete/<%= bug.Bug_ID %>">Remove</a>
+            <a class="btn btn-sm btn-warning" href="/edit_dev/<%= bug.Bug_ID %>">Modify</a>
+            <a class="btn btn-sm btn-danger" href="/delete_dev/<%= bug.Bug_ID %>">Remove</a>
           </td>
         </tr>
       <% } %>
