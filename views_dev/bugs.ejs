@@ -1,0 +1,33 @@
+<%- include("_header") -%>
+
+<h1>Bugs (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Timestamp</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/create">Submit</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const bug of model) { %>
+        <tr>
+          <td><%= bug.User %></td>
+          <td><%= bug.Type %></td>
+          <td><%= bug.Description %></td>
+          <td><%= bug.Timestamp %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/edit/<%= bug.Bug_ID %>">Modify</a>
+            <a class="btn btn-sm btn-danger" href="/delete/<%= bug.Bug_ID %>">Remove</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

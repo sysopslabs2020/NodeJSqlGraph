@@ -43,10 +43,10 @@ db.run(sql_create, err => {
   }
   console.log("Successful creation of the 'Bugs' table");
   // Database seeding
-  const sql_insert = `INSERT INTO Bugs (Bug_ID, User, Type, Description, Timestamp) VALUES
-  (1, 'Luca', 'High', 'Production Problem', 'CURRENT_TIMESTAMP'),
-  (2, 'Peter', 'Medium', 'Dev Problem', 'CURRENT_TIMESTAMP'),
-  (3, 'Jack', 'Low', 'Reset Pwd', 'CURRENT_TIMESTAMP');`;
+  const sql_insert = `INSERT INTO Bugs (Bug_ID, User, Type, Description) VALUES
+  (1, 'Luca', 'High', 'Production Problem'),
+  (2, 'Peter', 'Medium', 'Dev Problem'),
+  (3, 'Jack', 'Low', 'Reset Pwd');`;
   db.run(sql_insert, err => {
     if (err) {
       return console.error(err.message);
@@ -110,8 +110,8 @@ app.get("/create_dev", (req, res) => {
 
 // POST for create a new bug in DEV Mode
 app.post("/create_dev", (req, res) => {
-  const sql = "INSERT INTO Bugs (User, Type, Description, Timestamp) VALUES (?, ?, ?, ?)";
-  const bug = [req.body.User, req.body.Type, req.body.Description, req.body.Timestamp];
+  const sql = "INSERT INTO Bugs (User, Type, Description) VALUES (?, ?, ?)";
+  const bug = [req.body.User, req.body.Type, req.body.Description];
   db.run(sql, bug, err => {
     if (err) {
       return console.error(err.message);
@@ -136,8 +136,10 @@ app.get("/edit_dev/:id", (req, res) => {
 // POST /edit_dev/5 in DEV MODE for edit by id bug
 app.post("/edit_dev/:id", (req, res) => {
   const id = req.params.id;
-  const bug = [req.body.User, req.body.Type, req.body.Description, req.body.Timestamp, id];
-  const sql = "UPDATE Bugs SET User = ?, Type = ?, Description = ?, Timestamp = ? WHERE (Bug_ID = ?)";
+  //const bug = [req.body.User, req.body.Type, req.body.Description, req.body.Timestamp, id];
+  const bug = [req.body.User, req.body.Type, req.body.Description, id];
+  //const sql = "UPDATE Bugs SET User = ?, Type = ?, Description = ?, Timestamp = ? WHERE (Bug_ID = ?)";
+  const sql = "UPDATE Bugs SET User = ?, Type = ?, Description = ?, Timestamp = CURRENT_TIMESTAMP WHERE (Bug_ID = ?)";
   db.run(sql, bug, err => {
     if (err) {
       return console.error(err.message);
@@ -178,8 +180,8 @@ app.get("/create", (req, res) => {
 
 // POST /create Bug
 app.post("/create", (req, res) => {
-  const sql = "INSERT INTO Bugs (User, Type, Description, Timestamp) VALUES (?, ?, ?, ?)";
-  const bug = [req.body.User, req.body.Type, req.body.Description, req.body.Timestamp];
+  const sql = "INSERT INTO Bugs (User, Type, Description) VALUES (?, ?, ?)";
+  const bug = [req.body.User, req.body.Type, req.body.Description];
   db.run(sql, bug, err => {
     if (err) {
       return console.error(err.message);
@@ -203,8 +205,8 @@ app.get("/edit/:id", (req, res) => {
 // POST /edit/id edit Bug by id
 app.post("/edit/:id", (req, res) => {
   const id = req.params.id;
-  const bug = [req.body.User, req.body.Type, req.body.Description, req.body.Timestamp, id];
-  const sql = "UPDATE Bugs SET User = ?, Type = ?, Description = ?, Timestamp = ? WHERE (Bug_ID = ?)";
+  const bug = [req.body.User, req.body.Type, req.body.Description, id];
+  const sql = "UPDATE Bugs SET User = ?, Type = ?, Description = ?, Timestamp = CURRENT_TIMESTAMP WHERE (Bug_ID = ?)";
   db.run(sql, bug, err => {
     if (err) {
       return console.error(err.message);
