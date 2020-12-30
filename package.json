@@ -22,11 +22,13 @@
     "btw": "^0.1.1",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": ">=3.5.0",
     "nodemon": "^2.0.2",
     "sqlite3": "^4.1.1",
     "dot-prop": ">=4.2.1",
     "ini": ">=1.3.6",
-    "jquery": ">=3.5.0"
+	"popper": ">=1.14.7"
+	"apptest": ">=1.0.0"
+	"npm-install-peers": ">=1.0.3"
   }
 }
