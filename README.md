@@ -1,6 +1,6 @@
 # NodeJS - Sqlite3 - Express - Bootstrap - Rest API 
 ### "Simple Bug Manager App with Rest API"
-
+## NO WARRANTY for any damages and loss of data.
 Quick start Requirements:
 
 If you haven’t installed Node.js, visit https://nodejs.org/it/download/ for download and installation instructions.
