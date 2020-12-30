@@ -3,7 +3,7 @@
 
 Quick start Requirements:
 
-If you haven’t installed Node.js, visit https://nodejs.org/es/download/ for download and installation instructions.
+If you haven’t installed Node.js, visit https://nodejs.org/it/download/ for download and installation instructions.
 
 ### Tech Used
 
