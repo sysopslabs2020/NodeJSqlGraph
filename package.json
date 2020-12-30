@@ -28,7 +28,6 @@
     "dot-prop": ">=4.2.1",
     "ini": ">=1.3.6",
 	"popper": ">=1.14.7",
-	"apptest": ">=1.0.0",
-	"npm-install-peers": ">=1.0.3"
+	"apptest": ">=1.0.0",	
   }
 }

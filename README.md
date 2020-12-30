@@ -23,6 +23,12 @@ Requires[Node.js](https://nodejs.org/) v4+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
+If you have dependencies problem try:
+
+```sh
+npm install -g npm-install-peers
+```
+
 ```sh
 $ nodemon index.js
 ```
